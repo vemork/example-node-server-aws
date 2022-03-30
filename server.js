@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(router);
 
-const uri = "mongodb://3.89.218.67/test";
+const uri = "mongodb://3.89.218.67:27017/test";
 const options = {};
 
 mongoose
