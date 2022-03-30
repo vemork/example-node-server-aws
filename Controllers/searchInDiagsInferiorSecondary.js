@@ -1,5 +1,5 @@
-import { processAdn } from "./processAdn.js";
-import { validateAdnResult } from "./validateAdnResult.js";
+import { processAdn } from "../libs/processAdn.js";
+import { validateAdnResult } from "../libs/validateAdnResult.js";
 
 export async function searchInDiagsInferiorSecondary(
   dnaCodificatedMachine,
@@ -9,8 +9,7 @@ export async function searchInDiagsInferiorSecondary(
   var diagonalesLocales = diagonalesGlobales + (dimention - 5) * 4;
   var diagonalesInferioresSecundarias = diagonalesLocales / 4;
   var adnDiagnoalInferiorSecondary = [];
-  var poolCaller = []
-
+  var poolCaller = [];
 
   var limit = dimention - 1;
   // var columna = limit - 1;
@@ -25,7 +24,7 @@ export async function searchInDiagsInferiorSecondary(
       adnDiagnoalInferiorSecondary.push(element);
       colum--;
     }
-    poolCaller.push(processAdn(adnDiagnoalInferiorSecondary))
+    poolCaller.push(processAdn(adnDiagnoalInferiorSecondary));
     // var result = processAdn(adnDiagnoalInferiorSecondary);
     // if (result) {
     //   validateAdnResult(result);
@@ -33,8 +32,18 @@ export async function searchInDiagsInferiorSecondary(
     // }
     adnDiagnoalInferiorSecondary = [];
   }
-  var response = await Promise.all(poolCaller).catch(function(e) {
-    console.error(e);
-    console.log('Mutante :>> '); // "oh, no!"
-  });
+  let response;
+
+  await Promise.all(poolCaller)
+    .then(() => {
+      response = Promise.resolve(true);
+    })
+    .catch(function (e) {
+      // console.error(e);
+      // console.log("Mutante :>> "); // "Call Magneto!"
+      response = Promise.reject(false);
+    });
+
+  // console.log("🚀 ~ file: searchInRows.js ~ line 17 ~ searchInRows ~ response", response)
+  return response;
 }

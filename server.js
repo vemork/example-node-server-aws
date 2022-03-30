@@ -1,10 +1,10 @@
-const express = require('express')
+import express from "express";
 
-const app = express()
+import router from "./Routes/routes.js";
 
-app.get('/mutant/', (req, res)=>{
-  res.send('Hello world with Express')
-})
+const app = express();
+app.use(express.json());
+app.use(router);
 
-app.listen(3000)
-console.log('Server running on port 3000 :>> ');
+app.listen(3000);
+console.log("Server running on port 3000 :>> ");

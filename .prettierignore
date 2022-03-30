@@ -1,0 +1,6 @@
+# Ignore artifacts:
+build
+coverage
+
+# npx prettier --write .
+# npx prettier --check .

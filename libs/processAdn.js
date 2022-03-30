@@ -30,15 +30,19 @@ export function processAdn(obj) {
           break;
       }
     } else {
+      if(adn.includes(3)){
+        break;
+      }
       adn = [0, 0, 0, 0];
     }
   }
+  console.log("adn :>> ", adn);
   for (let index = 0; index < adn.length; index++) {
     const element = adn[index];
     if (element >= 3) {
-      return Promise.reject(true);
+      return Promise.reject(false);
     }
   }
 
-  return Promise.resolve(false);
+  return Promise.resolve(true);
 }
