@@ -1,10 +1,10 @@
 import { processAdn } from "../libs/processAdn.js";
 
 export async function searchInRows(dnaCodificatedMatrix) {
-  console.log(
-    "🚀 ~ file: searchInRows.js ~ line 4 ~ searchInRows ~ dnaCodificatedMatrix",
-    dnaCodificatedMatrix
-  );
+  // console.log(
+  //   "🚀 ~ file: searchInRows.js ~ line 4 ~ searchInRows ~ dnaCodificatedMatrix",
+  //   dnaCodificatedMatrix
+  // );
   var poolCaller = [];
   for (let index = 0; index < dnaCodificatedMatrix.length; index++) {
     //   console.log("🚀 ~ file: index.js ~ line 61 ~ index", index);
@@ -18,7 +18,7 @@ export async function searchInRows(dnaCodificatedMatrix) {
   }
 
   let response;
-  console.log("poolCaller :>> ", poolCaller);
+  // console.log("poolCaller :>> ", poolCaller);
   await Promise.all(poolCaller)
     .then((data) => {
       response = Promise.resolve(true);

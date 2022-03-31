@@ -11,6 +11,7 @@
   "homepage": "https://github.com/vemork/example-node-server-aws#readme",
   "dependencies": {
     "express": "^4.17.3",
+    "md5": "^2.3.0",
     "mongoose": "^6.2.9"
   },
   "devDependencies": {

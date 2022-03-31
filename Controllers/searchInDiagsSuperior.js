@@ -4,16 +4,16 @@ import { validateAdnResult } from "../libs/validateAdnResult.js";
 export async function searchInDiagsSuperior(dnaCodificatedMachine, dimention) {
   var diagonalesGlobales = 4;
   var diagonalesLocales = diagonalesGlobales + (dimention - 5) * 4;
-  console.log(
-    "🚀 ~ file: searchInDiagsSuperior.js ~ line 15 ~ searchInDiagsSuperior ~ diagonalesLocales",
-    diagonalesLocales
-  );
+  // console.log(
+  //   "🚀 ~ file: searchInDiagsSuperior.js ~ line 15 ~ searchInDiagsSuperior ~ diagonalesLocales",
+  //   diagonalesLocales
+  // );
   var diagonalesSuperioresPrincipales = diagonalesLocales / 4;
   var limitDiag = dnaCodificatedMachine.length - 1;
-  console.log(
-    "🚀 ~ file: searchInDiagsSuperior.js ~ line 18 ~ searchInDiagsSuperior ~ limitDiag",
-    limitDiag
-  );
+  // console.log(
+  //   "🚀 ~ file: searchInDiagsSuperior.js ~ line 18 ~ searchInDiagsSuperior ~ limitDiag",
+  //   limitDiag
+  // );
   var adnDiagnoalSuperior = [];
   var poolCaller = [];
 

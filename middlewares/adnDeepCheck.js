@@ -27,16 +27,16 @@ export async function adnDeepCheck(dimention, dnaCodificatedMachine) {
   } else {
     //only diags
     let adnPrincipalDiag = core.createAdnPrincipalDiag(dnaCodificatedMachine);
-    console.log(
-      "🚀 ~ file: adnDeepCheck.js ~ line 30 ~ adnDeepCheck ~ adnPrincipalDiag",
-      adnPrincipalDiag
-    );
+    // console.log(
+    //   "🚀 ~ file: adnDeepCheck.js ~ line 30 ~ adnDeepCheck ~ adnPrincipalDiag",
+    //   adnPrincipalDiag
+    // );
 
     keepSearching = await core.processAdn(adnPrincipalDiag);
-    console.log(
-      "🚀 ~ file: adnDeepCheck.js ~ line 36 ~ adnDeepCheck ~ keepSearching",
-      keepSearching
-    );
+    // console.log(
+    //   "🚀 ~ file: adnDeepCheck.js ~ line 36 ~ adnDeepCheck ~ keepSearching",
+    //   keepSearching
+    // );
 
     let adnSecundaryDiag = core.createAdnSecondaryDiag(dnaCodificatedMachine);
 
@@ -49,40 +49,40 @@ export async function adnDeepCheck(dimention, dnaCodificatedMachine) {
       dimention
     );
 
-    console.log(
-      "🚀 ~ file: adnDeepCheck.js ~ line 33 ~ adnDeepCheck ~ keepSearching",
-      keepSearching
-    );
+    // console.log(
+    //   "🚀 ~ file: adnDeepCheck.js ~ line 33 ~ adnDeepCheck ~ keepSearching",
+    //   keepSearching
+    // );
 
     //inferior diags
     keepSearching = await core.searchInDiagsInferior(
       dnaCodificatedMachine,
       dimention
     );
-    console.log(
-      "🚀 ~ file: adnDeepCheck.js ~ line 46 ~ adnDeepCheck ~ keepSearching",
-      keepSearching
-    );
+    // console.log(
+    //   "🚀 ~ file: adnDeepCheck.js ~ line 46 ~ adnDeepCheck ~ keepSearching",
+    //   keepSearching
+    // );
 
     //diagonales superiores secundarias
     keepSearching = await core.searchInDiagsSuperiorSecondary(
       dnaCodificatedMachine,
       dimention
     );
-    console.log(
-      "🚀 ~ file: adnDeepCheck.js ~ line 56 ~ adnDeepCheck ~ keepSearching",
-      keepSearching
-    );
+    // console.log(
+    //   "🚀 ~ file: adnDeepCheck.js ~ line 56 ~ adnDeepCheck ~ keepSearching",
+    //   keepSearching
+    // );
 
     //diagonales inferiores secundarias
     keepSearching = await core.searchInDiagsInferiorSecondary(
       dnaCodificatedMachine,
       dimention
     );
-    console.log(
-      "🚀 ~ file: adnDeepCheck.js ~ line 66 ~ adnDeepCheck ~ keepSearching",
-      keepSearching
-    );
+    // console.log(
+    //   "🚀 ~ file: adnDeepCheck.js ~ line 66 ~ adnDeepCheck ~ keepSearching",
+    //   keepSearching
+    // );
   }
 
   return Promise.resolve(keepSearching);

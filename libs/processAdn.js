@@ -36,7 +36,7 @@ export function processAdn(obj) {
       adn = [0, 0, 0, 0];
     }
   }
-  console.log("adn :>> ", adn);
+  // console.log("adn :>> ", adn);
   for (let index = 0; index < adn.length; index++) {
     const element = adn[index];
     if (element >= 3) {

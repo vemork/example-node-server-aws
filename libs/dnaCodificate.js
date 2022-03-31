@@ -20,14 +20,14 @@ export function dnaCodificate(dna) {
     newValueMachine = [];
   });
 
-  console.log(
-    "🚀 ~ file: dnaCodificate.js ~ line 5 ~ dnaCodificate ~ dnaCodificatedHuman",
-    dnaCodificatedHuman
-  );
-  console.log(
-    "🚀 ~ file: dnaCodificate.js ~ line 21 ~ dna.forEach ~ dnaCodificatedMachine",
-    dnaCodificatedMachine
-  );
+  // console.log(
+  //   "🚀 ~ file: dnaCodificate.js ~ line 5 ~ dnaCodificate ~ dnaCodificatedHuman",
+  //   dnaCodificatedHuman
+  // );
+  // console.log(
+  //   "🚀 ~ file: dnaCodificate.js ~ line 21 ~ dna.forEach ~ dnaCodificatedMachine",
+  //   dnaCodificatedMachine
+  // );
 
   return dnaCodificatedMachine;
 }

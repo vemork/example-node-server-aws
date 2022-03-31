@@ -5,8 +5,9 @@ const options = {};
 
 mongoose
   .connect(uri, options)
-  .then(() => {
-    console.log("Database connected ");
+  .then((data) => {
+    // console.log('data :>> ', data);
+    // console.log("Database connected ");
   })
   .catch((err) => console.log("err :>> ", err));
 

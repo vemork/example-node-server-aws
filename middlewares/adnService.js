@@ -1,18 +1,8 @@
-import { adnDeepCheck } from "./adnDeepCheck.js";
-import * as core from "./index.js";
-
-let keepSearching
-
-function callMagneto(res, keepSearching) {
-  if(!keepSearching){
-    return res.status(200).json("We get a Mutant! Call Magneto ...");
-  }else{
-    return res.status(403).json("It's another human ...");
-  }
-}
+import Adn from "../models/Adn.js";
+import { processAdn } from "./processAdn.js";
 
 export const adnService = async (req, res) => {
-  res.set('Cache-Control', 'no-store')
+  res.set("Cache-Control", "no-store");
   // const data = req.body;
   // console.log("🚀 ~ file: server.js ~ line 8 ~ app.get ~ data", data);
   // res.status(200).send("from router ...666");
@@ -28,56 +18,18 @@ export const adnService = async (req, res) => {
   // var dna = ["ATGCGA", "CAGTGC", "TTATGT", "AGAAGG", "CCCCTA", "TCACTG"];
   // var dna = ["ACGATA", "ACAGTA", "CAGTAC", "ACGTAC", "ACGTAC", "ACACGT"];
   const { dna } = req.body;
+  // console.log("🚀 ~ file: adnService.js ~ line 21 ~ adnService ~ dna", dna)
 
   try {
-    const dnaCodificatedMachine = core.dnaCodificate(dna);
-    const dimention = dnaCodificatedMachine.length;
-    console.log(
-      "🚀 ~ file: adnService.js ~ line 28 ~ adnService ~ dimention",
-      dimention
-    );
-
-    if (dimention >= 4) {
-      keepSearching = await core.searchInRows(dnaCodificatedMachine);
-      console.log(
-        "🚀 ~ file: adnService.js ~ line 35 ~ adnService ~ keepSearching",
-        keepSearching
-      );
-
-
-      // TRANSPOSE dnaCodificatedMachine
-      const dnaCodificatedMachineTransposed = core.transposeAdnMatrix(
-        dnaCodificatedMachine
-      );
-
-      keepSearching = await core.searchInRows(dnaCodificatedMachineTransposed);
-      console.log(
-        "🚀 ~ file: adnService.js ~ line 50 ~ adnService ~ keepSearching",
-        keepSearching
-      );
-      
-      keepSearching = await adnDeepCheck(dimention, dnaCodificatedMachine)
-      console.log(
-        "🚀 ~ file: adnService.js ~ line 59 ~ adnService ~ keepSearching",
-        keepSearching
-      );
-
-
-      // return res.status(403).json("It's another human ...");
-    } else {
-      return res.status(403).json({
-        message:
-          "Invalid DNA input, try with a different ADN chain, the minimum dimension is 4",
-        eg: {
-          dna: ["ATGCGA", "CAGTGC", "TTATGT", "AGAAGG", "CCCCTA", "TCACTG"],
-        },
-      });
-    }
+    const AdnMethods = Adn.schema.methods;
+    const adnReference = AdnMethods.hashAdnChain(dna);
+    const adnExits = await Adn.findOne({ "genoma.id": adnReference });
+    // console.log("🚀 ~ file: adnService.js ~ line 27 ~ adnService ~ adnExits", adnExits)
+    
+    processAdn(adnExits, res, dna);
   } catch (error) {
-    console.log('error :>> ', error);
-    console.log('We got a new Mutant :>> ');
-    keepSearching = false
-  } finally {
-    callMagneto(res, keepSearching)
+    // console.log("error adnService :>> ", error);
+    // console.log("We got a new Mutant :>> ");
+    // keepSearching = false;
   }
 };
