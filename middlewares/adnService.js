@@ -1,5 +1,5 @@
 import Adn from "../models/Adn.js";
-import { processAdn } from "./processAdn.js";
+import processAdn from "./processAdn.js";
 
 export const adnService = async (req, res) => {
   res.set("Cache-Control", "no-store");

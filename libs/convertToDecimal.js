@@ -1,4 +1,4 @@
-export function convertToDecimal(key) {
+export default function convertToDecimal(key) {
   switch (key) {
     case "A":
       return 1;

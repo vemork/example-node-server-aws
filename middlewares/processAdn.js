@@ -4,7 +4,7 @@ import { callMagneto } from "../libs/callMagneto.js";
 
 let keepSearching;
 
-export async function processAdn(adnExits, res, dna){
+export default async function processAdn(adnExits, res, dna){
   try {
     if (!adnExits) {
       const dnaCodificatedMachine = core.dnaCodificate(dna);
@@ -40,7 +40,7 @@ export async function processAdn(adnExits, res, dna){
   
         // return res.status(403).json("It's another human ...");
       } else {
-        return res.status(403).json({
+        return res.status(400).json({
           message:
             "Invalid DNA input, try with a different ADN chain, the minimum dimension is 4",
           eg: {

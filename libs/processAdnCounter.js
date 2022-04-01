@@ -1,4 +1,4 @@
-export function processAdn(obj) {
+export default function processAdnCounter(obj) {
   var adn = [0, 0, 0, 0];
   for (var i = 0; i < obj.length - 1; i++) {
     // console.log("i=", i);

@@ -1,6 +1,6 @@
 import { convertToDecimal } from "../middlewares/index.js";
 
-export function dnaCodificate(dna) {
+export default function dnaCodificate(dna) {
   let dnaCodificatedHuman = [];
   let newValueMachine = [];
   let dnaCodificatedMachine = [];

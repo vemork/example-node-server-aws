@@ -1,7 +1,6 @@
-import { processAdn } from "../libs/processAdn.js";
-import { validateAdnResult } from "../libs/validateAdnResult.js";
+import processAdn from "../libs/processAdnCounter.js";
 
-export async function searchInDiagsInferior(dnaCodificatedMachine, dimention) {
+export default async function searchInDiagsInferior(dnaCodificatedMachine, dimention) {
   var diagInf = 1;
   var diagonalesGlobales = 4;
   var diagonalesLocales = diagonalesGlobales + (dimention - 5) * 4;
@@ -18,11 +17,7 @@ export async function searchInDiagsInferior(dnaCodificatedMachine, dimention) {
       colum++;
     }
     poolCaller.push(processAdn(adnDiagnoalInferior));
-    // var result = processAdn(adnDiagnoalInferior);
-    // if (result) {
-    //   validateAdnResult(result);
-    //   break;
-    // }
+
     adnDiagnoalInferior = [];
     diagInf++;
   }

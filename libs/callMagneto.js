@@ -30,12 +30,12 @@ export async function callMagneto(res, keepSearching, dna) {
       genomaDb.ratio = ratioResult
     }
     await genomaDb.save()
-    return res.status(200).json("We get a Mutant! Call Magneto ...");
+    return res.status(200).json({message: "We get a Mutant! Call Magneto ..."});
   } else {
     genomaDb.count_human_dna += 1;
     let ratioResult = genomaDb.count_mutant_dna / genomaDb.count_human_dna 
     genomaDb.ratio = ratioResult
     await genomaDb.save()
-    return res.status(403).json("It's another human ...");
+    return res.status(403).json({message:"It's another human ..."});
   }
 }

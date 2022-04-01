@@ -1,6 +1,6 @@
-import { processAdn } from "../libs/processAdn.js";
+import processAdn from "../libs/processAdnCounter.js";
 
-export async function searchInRows(dnaCodificatedMatrix) {
+export default async function searchInRows(dnaCodificatedMatrix) {
   // console.log(
   //   "🚀 ~ file: searchInRows.js ~ line 4 ~ searchInRows ~ dnaCodificatedMatrix",
   //   dnaCodificatedMatrix

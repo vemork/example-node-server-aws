@@ -1,7 +1,6 @@
-import { processAdn } from "../libs/processAdn.js";
-import { validateAdnResult } from "../libs/validateAdnResult.js";
+import processAdn from "../libs/processAdnCounter.js";
 
-export async function searchInDiagsSuperior(dnaCodificatedMachine, dimention) {
+export default async function searchInDiagsSuperior(dnaCodificatedMachine, dimention) {
   var diagonalesGlobales = 4;
   var diagonalesLocales = diagonalesGlobales + (dimention - 5) * 4;
   // console.log(
@@ -29,11 +28,7 @@ export async function searchInDiagsSuperior(dnaCodificatedMachine, dimention) {
     //   adnDiagnoalSuperior
     // );
     poolCaller.push(processAdn(adnDiagnoalSuperior));
-    // var result = processAdn(adnDiagnoalSuperior);
-    // if (result) {
-    //   validateAdnResult(result);
-    //   break;
-    // }
+
     adnDiagnoalSuperior = [];
     limitDiag--;
   }

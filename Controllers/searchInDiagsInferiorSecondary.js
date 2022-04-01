@@ -1,7 +1,6 @@
-import { processAdn } from "../libs/processAdn.js";
-import { validateAdnResult } from "../libs/validateAdnResult.js";
+import processAdn from "../libs/processAdnCounter.js";
 
-export async function searchInDiagsInferiorSecondary(
+export default async function searchInDiagsInferiorSecondary(
   dnaCodificatedMachine,
   dimention
 ) {
@@ -25,11 +24,7 @@ export async function searchInDiagsInferiorSecondary(
       colum--;
     }
     poolCaller.push(processAdn(adnDiagnoalInferiorSecondary));
-    // var result = processAdn(adnDiagnoalInferiorSecondary);
-    // if (result) {
-    //   validateAdnResult(result);
-    //   break;
-    // }
+
     adnDiagnoalInferiorSecondary = [];
   }
   let response;
