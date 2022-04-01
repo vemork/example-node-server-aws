@@ -34,7 +34,7 @@ export default async function searchInDiagsSuperior(dnaCodificatedMachine, dimen
   }
 
   let response;
-  console.log('poolCaller :>> ', poolCaller);
+  // console.log('poolCaller :>> ', poolCaller);
    response = await Promise.all(poolCaller)
     .then(() => {
       // console.log('Human :>> ');

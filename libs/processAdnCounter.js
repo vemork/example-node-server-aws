@@ -27,7 +27,7 @@ export default function processAdnCounter(obj) {
           break;
 
         default:
-          console.log("invalid input", obj[i]);
+          // console.log("invalid input", obj[i]);
           break;
       }
     } else {
