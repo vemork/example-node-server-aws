@@ -1,4 +1,4 @@
-import processAdn from "../libs/processAdnCounter.js";
+import processAdnCounter from "../libs/processAdnCounter.js";
 
 export default async function searchInDiagsSuperiorSecondary(
   dnaCodificatedMachine,
@@ -20,7 +20,7 @@ export default async function searchInDiagsSuperiorSecondary(
       adnDiagnoalSuperiorSecondary.push(element);
       colum--;
     }
-    poolCaller.push(processAdn(adnDiagnoalSuperiorSecondary));
+    poolCaller.push(processAdnCounter(adnDiagnoalSuperiorSecondary));
     // var result = processAdn(adnDiagnoalSuperiorSecondary);
 
     adnDiagnoalSuperiorSecondary = [];

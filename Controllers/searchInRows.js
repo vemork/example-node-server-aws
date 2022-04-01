@@ -1,4 +1,4 @@
-import processAdn from "../libs/processAdnCounter.js";
+import processAdnCounter from "../libs/processAdnCounter.js";
 
 export default async function searchInRows(dnaCodificatedMatrix) {
   // console.log(
@@ -10,7 +10,7 @@ export default async function searchInRows(dnaCodificatedMatrix) {
     //   console.log("🚀 ~ file: index.js ~ line 61 ~ index", index);
     const adnChain = dnaCodificatedMatrix[index];
     // var adnResult = processAdn(adnChain);
-    poolCaller.push(processAdn(adnChain));
+    poolCaller.push(processAdnCounter(adnChain));
     // if (adnResult) {
     //   console.log("MUTANT :>> ");
     //   break;

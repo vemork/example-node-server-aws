@@ -2,7 +2,7 @@ import * as core from "./index.js";
 import { adnDeepCheck } from "./adnDeepCheck.js";
 import { callMagneto } from "../libs/callMagneto.js";
 
-let keepSearching;
+
 
 export default async function processAdn(adnExits, res, dna){
   try {
@@ -13,7 +13,7 @@ export default async function processAdn(adnExits, res, dna){
       //   "🚀 ~ file: adnService.js ~ line 28 ~ adnService ~ dimention",
       //   dimention
       // );
-  
+      let keepSearching = undefined;
       if (dimention >= 4) {
         keepSearching = await core.searchInRows(dnaCodificatedMachine);
         // console.log(
@@ -27,16 +27,16 @@ export default async function processAdn(adnExits, res, dna){
         );
   
         keepSearching = await core.searchInRows(dnaCodificatedMachineTransposed);
-        // console.log(
-        //   "🚀 ~ file: adnService.js ~ line 50 ~ adnService ~ keepSearching",
-        //   keepSearching
-        // );
+        console.log(
+          "🚀 ~ file: adnService.js ~ line 50 ~ adnService ~ keepSearching",
+          keepSearching
+        );
   
         keepSearching = await adnDeepCheck(dimention, dnaCodificatedMachine);
-        // console.log(
-        //   "🚀 ~ file: adnService.js ~ line 59 ~ adnService ~ keepSearching",
-        //   keepSearching
-        // );
+        console.log(
+          "🚀 ~ file: adnService.js ~ line 59 ~ adnService ~ keepSearching",
+          keepSearching
+        );
   
         // return res.status(403).json("It's another human ...");
       } else {
@@ -53,9 +53,9 @@ export default async function processAdn(adnExits, res, dna){
      res.status(400).json({ message: "This ADN chain have been analized yet." });
     }
   } catch (error) {
-    // console.log("error processAdn :>> ", error);
+    console.log("error processAdn 333 :>> ", error);
     // console.log("We got a new Mutant :>> ");
-    keepSearching = false;
+    let keepSearching = false;
     callMagneto(res, keepSearching, dna);
   }
 }

@@ -1,4 +1,4 @@
-import processAdn from "../libs/processAdnCounter.js";
+import processAdnCounter from "../libs/processAdnCounter.js";
 
 export default async function searchInDiagsInferior(dnaCodificatedMachine, dimention) {
   var diagInf = 1;
@@ -16,7 +16,7 @@ export default async function searchInDiagsInferior(dnaCodificatedMachine, dimen
       adnDiagnoalInferior.push(element);
       colum++;
     }
-    poolCaller.push(processAdn(adnDiagnoalInferior));
+    poolCaller.push(processAdnCounter(adnDiagnoalInferior));
 
     adnDiagnoalInferior = [];
     diagInf++;

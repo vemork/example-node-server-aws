@@ -1,4 +1,4 @@
-import processAdn from "../libs/processAdnCounter.js";
+import processAdnCounter from "../libs/processAdnCounter.js";
 
 export default async function searchInDiagsSuperior(dnaCodificatedMachine, dimention) {
   var diagonalesGlobales = 4;
@@ -27,14 +27,14 @@ export default async function searchInDiagsSuperior(dnaCodificatedMachine, dimen
     //   "🚀 ~ file: searchInDiagsSuperior.js ~ line  ~ searchInDiagsSuperior ~ adnDiagnoalSuperior",
     //   adnDiagnoalSuperior
     // );
-    poolCaller.push(processAdn(adnDiagnoalSuperior));
+    poolCaller.push(processAdnCounter(adnDiagnoalSuperior));
 
     adnDiagnoalSuperior = [];
     limitDiag--;
   }
 
   let response;
-  // console.log('poolCaller :>> ', poolCaller);
+  console.log('poolCaller :>> ', poolCaller);
    response = await Promise.all(poolCaller)
     .then(() => {
       // console.log('Human :>> ');

@@ -1,10 +1,11 @@
 export default function processAdnCounter(obj) {
-  var adn = [0, 0, 0, 0];
-  for (var i = 0; i < obj.length - 1; i++) {
+  let adn = [0, 0, 0, 0];
+
+  for (let i = 0; i < obj.length - 1; i++) {
     // console.log("i=", i);
     // console.log(obj[i] === obj[i++]);
     // console.log('obj[i] :>> ', obj[i]|);
-    var nextt = i + 1;
+    let nextt = i + 1;
     // console.log('obj[i++] :>> ', obj[nex]);
     if (obj[i] === obj[nextt]) {
       switch (obj[i]) {

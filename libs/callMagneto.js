@@ -1,6 +1,7 @@
 import Adn from "../models/Adn.js";
 
 export async function callMagneto(res, keepSearching, dna) {
+  console.log("🚀 ~ file: callMagneto.js ~ line 4 ~ callMagneto ~ keepSearching", keepSearching)
   const AdnMethods = Adn.schema.methods;
   const adnReference = AdnMethods.hashAdnChain(dna);
   let genomaDb = await Adn.findOne();

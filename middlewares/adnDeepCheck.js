@@ -1,13 +1,12 @@
 import * as core from "./index.js";
 
-let keepSearching;
-
 export async function adnDeepCheck(dimention, dnaCodificatedMachine) {
+  let keepSearching;
   // try {
   if (dimention === 4) {
     let adnPrincipalDiag = core.createAdnPrincipalDiag(dnaCodificatedMachine);
 
-    keepSearching = await core.processAdn(adnPrincipalDiag);
+    keepSearching = await core.processAdnCounter(adnPrincipalDiag);
     // console.log(
     //   "🚀 ~ file: adnDeepCheck.js ~ line 11 ~ adnDeepCheck ~ keepSearching",
     //   keepSearching
@@ -19,7 +18,7 @@ export async function adnDeepCheck(dimention, dnaCodificatedMachine) {
     //   adnSecundaryDiag
     // );
 
-    keepSearching = await core.processAdn(adnSecundaryDiag);
+    keepSearching = await core.processAdnCounter(adnSecundaryDiag);
     // console.log(
     //   "🚀 ~ file: adnDeepCheck.js ~ line 18 ~ adnDeepCheck ~ keepSearching",
     //   keepSearching
@@ -32,7 +31,7 @@ export async function adnDeepCheck(dimention, dnaCodificatedMachine) {
     //   adnPrincipalDiag
     // );
 
-    keepSearching = await core.processAdn(adnPrincipalDiag);
+    keepSearching = await core.processAdnCounter(adnPrincipalDiag);
     // console.log(
     //   "🚀 ~ file: adnDeepCheck.js ~ line 36 ~ adnDeepCheck ~ keepSearching",
     //   keepSearching
@@ -40,7 +39,7 @@ export async function adnDeepCheck(dimention, dnaCodificatedMachine) {
 
     let adnSecundaryDiag = core.createAdnSecondaryDiag(dnaCodificatedMachine);
 
-    keepSearching = await core.processAdn(adnSecundaryDiag);
+    keepSearching = await core.processAdnCounter(adnSecundaryDiag);
 
     //superior diags
 
