@@ -15,3 +15,7 @@ jobs:
     steps:
       - name: 'Hello World'
         run: echo "Hello Echo World"
+      - name: 'Paso 2'
+        run: date
+      - name: 'Paso 3'
+        run: ls -la
