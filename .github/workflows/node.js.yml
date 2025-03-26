@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest # Windows, Linux, Mac
 
     steps:
+      - uses: 'actions/checkout@v4' 
       - name: 'Hello World'
         run: echo "Hello Echo World"
       - name: 'Paso 2'
